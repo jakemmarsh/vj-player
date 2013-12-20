@@ -1,0 +1,27 @@
+<head>
+  <title>vj-player</title>
+</head>
+
+<body>
+  {{renderPage}}
+</body>
+
+<template name="index">
+	{{> parties}}
+</template>
+<template name="parties">
+  <div>
+    <h2>Available Parties</h2>
+    <p><button type="button" id="addParty">Start new party</button></p>
+    <ul>
+        {{#each availableParties}}
+            {{> partyItem}}
+        {{/each}}
+    </ul>
+  </div>
+</template>
+<template name="partyItem">
+    <li>
+        <a href="party/{{_id}}">{{name}}</a>
+    </li>
+</template>
